@@ -3,17 +3,19 @@ package kodlamaio.northwind.entities.concretes;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
 
-@Entity
-@Table(name="products ")
+@Entity//Product ın bir Entity oldugunu söyleriz
+@Table(name="products ")//db de hangi tabloya karşılık geliyor onu belirtiriz
 @Data //Getter ve Setter için lombok kullanıyoruz burda
 public class Product {
+	
 	@Id//primary key oldugunu göstermek için
-	@GeneratedValue//otomatik artan  olmaı için
+	@GeneratedValue(strategy=GenerationType.IDENTITY)//otomatik artan  olmaı için.Db tarafından oldugunu belirtmek istersek strategy ile yapıyoruz
 	@Column(name="product_id")//db de hangi kolona karşılık geldiğini gösteririz
 	private int id; //bu özellikleri db deki northwind e göre yazdık
 	
