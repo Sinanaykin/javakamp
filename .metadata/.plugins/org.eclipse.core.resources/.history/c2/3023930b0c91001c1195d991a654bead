@@ -1,0 +1,38 @@
+package kodlamaio.northwind.dataAccess.abstracts;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import kodlamaio.northwind.entities.concretes.Product;
+
+public interface ProductDao extends JpaRepository<Product,Integer>{ 
+//ProductDao JpaRepository extend ediyor(interface interface i extend eder) ve içine Entity mizi ve primary key veri tipini gir.Artık Crud işlemlerini yapabiliriz. 
+ 
+	
+	//JpaRepository deki metotlar dışında özel metot isersek aşağıdaki gibi  olusturabiliriz otomatik filtreler bizim için ve metotların db ile ilişkisi kurulur
+	
+	Product getByProductName(String productName);//Böyle yazınca başına getBy şeklinde otomatik bizim için filtreliyor ProductName e göre
+	
+	Product getByProductNameAndCategoryId(String productName,int categoryId);//Hem ProductName hem CategoryId ye göre filtreliyor
+	
+	List<Product> getByProductNameOrCategoryId(String productName,int categoryId);//Burda veya dedik ve liste olarak istedik
+	
+	List<Product> getByCategoryIdIn(List<Integer> categories);//Birden fazla category göndericez category ıd leri içerenlerin hepsini  getiricez
+	
+	List<Product> getByProductNameContains(String productName);//Ürün ismini içerenleri getiricez
+	
+	List<Product> getByProductNameStartsWith(String productName);//Gönderdiğimiz productName ile başlayanları getirir
+	
+	//JPQL ile yazma(Linq ya benziyor)
+	//Burda database i unut entitylere göre sorgu yazıyoruz.
+	//Product entity sinde productName kolonu eşitse gönderdiğimiz parametre olan productName ve
+	//Product entity sinde category_Id kolonu eşitse gönderdiğimiz parametre olan categoryId ye getir diyoruz
+	@Query("From Product  where productName=:productName and category_Id=:categoryId")
+	List<Product> getByNameAndCategory(String productName,int categoryId);//Yukardaki(getByProductNameAndCategoryId) ile aynı ama burda isimlendirme uymadık ve JPQL(Linq ya benzeyen bir yapı) ile yazmak istedik
+	
+	
+	
+	
+}

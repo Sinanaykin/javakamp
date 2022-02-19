@@ -5,12 +5,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity//Product ın bir Entity oldugunu söyleriz
-@Table(name="products ")//db de hangi tabloya karşılık geliyor onu belirtiriz
+@Table(name="products")//db de hangi tabloya karşılık geliyor onu belirtiriz
+@AllArgsConstructor
+@NoArgsConstructor
 @Data //Getter ve Setter için lombok kullanıyoruz burda
 public class Product {
 	
@@ -19,8 +25,7 @@ public class Product {
 	@Column(name="product_id")//db de hangi kolona karşılık geldiğini gösteririz
 	private int id; //bu özellikleri db deki northwind e göre yazdık
 	
-	@Column(name="category_id")
-	private int categoryId;
+	//Burdan private int categoryId yi kaldırdık çünkü aşağıdaki join içinden ulaşabiliyoruz buna zaten am EF de bunu yazıyoduk , hibernate de yazmayız.
 	
 	@Column(name="product_name")
 	private String productName; 
@@ -34,19 +39,10 @@ public class Product {
 	@Column(name="quantity_per_unit")
 	private String quantityPerUnit;
 	
-	public Product() {
-		
-	}
+	@ManyToOne()//Product many category one demek bu
+	@JoinColumn(name="category_id")//iki tabloyu ne ile join ettiğimizi söylüyoruz bunda.Aynı 2.cil anahtar gibi
+	private Category category;
 	
-	public Product(int id, int categoryId, String productName, double unitPrice, short unitsInStock,
-			String quantityPerUnit) {
-		super();
-		this.id = id;
-		this.categoryId = categoryId;
-		this.productName = productName;
-		this.unitPrice = unitPrice;
-		this.unitsInStock = unitsInStock;
-		this.quantityPerUnit = quantityPerUnit;
-	}
+	
 
 }
