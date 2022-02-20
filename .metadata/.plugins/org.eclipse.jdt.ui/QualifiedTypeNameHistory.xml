@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="nLayeredDemo.entities.abstracts.Entity"/>
     <fullyQualifiedTypeName name="nLayeredDemo.business.concretes.ProductManager"/>
     <fullyQualifiedTypeName name="nLayeredDemo.dataAccess.abstracts.ProductDao"/>
     <fullyQualifiedTypeName name="nLayeredDemo.dataAccess.concretes.HibernateProductDao"/>
@@ -9,9 +8,6 @@
     <fullyQualifiedTypeName name="nLayeredDemo.core.LoggerService"/>
     <fullyQualifiedTypeName name="nLayeredDemo.jLogger.JLoggerManager"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
-    <fullyQualifiedTypeName name="javax.persistence.Column"/>
-    <fullyQualifiedTypeName name="javax.persistence.Id"/>
-    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
     <fullyQualifiedTypeName name="kodlamaio.northwind.dataAccess.abstracts.ProductDao"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
@@ -20,23 +16,16 @@
     <fullyQualifiedTypeName name="kodlamaio.northwind.entities.concretes.Product"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="kodlamaio.northwind.business.abstracts.ProductService"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
     <fullyQualifiedTypeName name="springfox.documentation.builders.RequestHandlerSelectors"/>
     <fullyQualifiedTypeName name="springfox.documentation.builders.PathSelectors"/>
     <fullyQualifiedTypeName name="springfox.documentation.spring.web.plugins.Docket"/>
     <fullyQualifiedTypeName name="springfox.documentation.spi.DocumentationType"/>
     <fullyQualifiedTypeName name="springfox.documentation.swagger2.annotations.EnableSwagger2"/>
-    <fullyQualifiedTypeName name="kodlamaio.northwind.core.utilities.results.SuccessDataResult"/>
     <fullyQualifiedTypeName name="kodlamaio.northwind.core.utilities.results.DataResult"/>
     <fullyQualifiedTypeName name="javax.naming.spi.DirStateFactory.Result"/>
-    <fullyQualifiedTypeName name="kodlamaio.northwind.core.utilities.results.SuccessResult"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="kodlamaio.northwind.core.utilities.results.Result"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
-    <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
-    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
-    <fullyQualifiedTypeName name="javax.persistence.Table"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="java.awt.print.Pageable"/>
@@ -44,4 +33,31 @@
     <fullyQualifiedTypeName name="org.springframework.data.domain.Pageable"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
+    <fullyQualifiedTypeName name="kodlamaio.northwind.entities.dtos.ProductWithCategoryDto"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.Email"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.NotBlank"/>
+    <fullyQualifiedTypeName name="kodlamaio.northwind.business.abstracts.UserService"/>
+    <fullyQualifiedTypeName name="kodlamaio.northwind.core.dataAccess.UserDao"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="kodlamaio.northwind.core.utilities.results.SuccessResult"/>
+    <fullyQualifiedTypeName name="kodlamaio.northwind.core.utilities.results.SuccessDataResult"/>
+    <fullyQualifiedTypeName name="kodlamaio.northwind.core.entities.User"/>
+    <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+    <fullyQualifiedTypeName name="kodlamaio.northwind.core.utilities.results.Result"/>
+    <fullyQualifiedTypeName name="kodlamaio.northwind.core.utilities.results.ErrorDataResult"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ExceptionHandler"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder.MethodArgumentBuilder"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.MethodArgumentNotValidException"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="org.springframework.validation.FieldError"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
+    <fullyQualifiedTypeName name="javax.validation.Valid"/>
 </qualifiedTypeNameHistroy>
