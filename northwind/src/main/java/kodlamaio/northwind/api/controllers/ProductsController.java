@@ -14,6 +14,7 @@ import kodlamaio.northwind.business.abstracts.ProductService;
 import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.Result;
 import kodlamaio.northwind.entities.concretes.Product;
+import kodlamaio.northwind.entities.dtos.ProductWithCategoryDto;
 
 @RestController //RestController olduğu belirttik
 @RequestMapping("/api/products/") //yolunu belirttik 
@@ -65,6 +66,11 @@ public class ProductsController {
 	@GetMapping("getAllDesc")//azalan metod yaptık
 	public DataResult<List<Product>> getAllShorted(){
 		return this.productService.getAllShorted();
+	}
+	
+	@GetMapping("getProductWtihCategoryDetails")
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails(){
+		return this.productService.getProductWithCategoryDetails();
 	}
 	
 	

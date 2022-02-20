@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import kodlamaio.northwind.entities.concretes.Product;
+import kodlamaio.northwind.entities.dtos.ProductWithCategoryDto;
 
 public interface ProductDao extends JpaRepository<Product,Integer>{ 
 //ProductDao JpaRepository extend ediyor(interface interface i extend eder) ve içine Entity mizi ve primary key veri tipini gir.Artık Crud işlemlerini yapabiliriz. 
@@ -26,14 +27,17 @@ public interface ProductDao extends JpaRepository<Product,Integer>{
 	
 	List<Product> getByProductNameStartsWith(String productName);//Gönderdiğimiz productName ile başlayanları getirir
 	
-	//JPQL ile yazma(Linq ya benziyor)
+	//JPAQL ile yazma(Linq ya benziyor)
 	//Burda database i unut entitylere göre sorgu yazıyoruz.
 	//Product entity sinde productName kolonu eşitse gönderdiğimiz parametre olan productName ve
 	//Product entity sinde category içindeki categoryId kolonu eşitse gönderdiğimiz parametre olan categoryId ye getir diyoruz
-	@Query("From Product  where productName=:productName and category.categoryId=:categoryId")
+	@Query("From Product  where productName=:productName and category.categoryId=:categoryId")//Tüm kolonlar gelsin istediğimiz için selecte gerek yok
 	List<Product> getByNameAndCategory(String productName,int categoryId);//Yukardaki(getByProductNameAndCategoryId) ile aynı ama burda isimlendirme uymadık ve JPQL(Linq ya benzeyen bir yapı) ile yazmak istedik
 	
+	@Query("Select new kodlamaio.northwind.entities.dtos.ProductWithCategoryDto(p.id,p.productName,c.categoryName) From Category c Inner join c.products p")//Burda giderken önce ana tablodan git yani onetomany ise one olanı ilk yaz yani category i
+	//Category ile Product joinle.Ama Producta Category içindeki products dan ulaş.Daha sonra parantez içindeki 3 alanı ProductWithCategoryDto ya aktar diyoruz burda
+	List<ProductWithCategoryDto> getProductWithCategoryDetails();//Sadece id,productName,categoryName çekmek istersek bu metodu kullanıcaz geri dönüş değerini oluşturduğumuz Dto(ProductWithCategoryDto) verdik.
 	
-	
+
 	
 }
