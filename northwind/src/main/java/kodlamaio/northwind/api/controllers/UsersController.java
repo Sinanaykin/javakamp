@@ -36,9 +36,9 @@ public class UsersController {
 	}
 	
 	@PostMapping(value="add")
-	                          //@Valid doğrulama kodunda geçir demek buda.
+	                          //@Valid doğrulama metodundan geçir demek buda.
 	public ResponseEntity<?> add(@Valid @RequestBody User user) {//ekleme işleminde geriye dönüş değerimizi bu şekilde vericez Result veya DataResult şeklinde vermicez artık. olumlumu olumsuz mu bilmediğimiz için  ? veriyoruzu içine
-		return ResponseEntity.ok(this.userService.add(user));
+		return ResponseEntity.ok(this.userService.add(user));//İşlem basarılı ise ekle deriz.değilse doğrulama metodundan gecemez hata verir
 	}
 	
 	
